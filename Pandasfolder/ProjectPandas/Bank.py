@@ -31,7 +31,13 @@ bank_df_salary
 # Note that we now have client IDs from 1 to 10
 bank_df_all = pd.concat([Bank_df_1, Bank_df_2])
 bank_df_all
-
+new_client = {
+        'Bank Client ID': ['11'],
+        'First Name': ['Ry'], 
+        'Last Name': ['Aly'],
+        'Annual Salary [$/year]' : [1000]}
+new_client_df = pd.DataFrame(new_client, columns = ['Bank Client ID', 'First Name', 'Last Name', 'Annual Salary [$/year]'])
+new_client_df
 
 # Let's merge all data on 'Bank Client ID'
 bank_df_all = pd.merge(bank_df_all, bank_df_salary, on = 'Bank Client ID')
